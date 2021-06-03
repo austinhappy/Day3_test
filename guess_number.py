@@ -1,24 +1,27 @@
 import random
 
-x = random.randint(1, 100)
+start = int(input('you decide the begining:'))
+end = int(input('you decide the end:'))
+
+x = random.randint(start, end)
 n = 0 #calculate the guess times!
 
 print(x)
 
 while True:
 	g = int(input('enter a number:'))
+	n += 1
 	if g == x:
-		n += 1
 		print('you got it!')
-		print('forward you guess %d times!' % n )
+		print('totally you guess %d times!' % n )
 		break
-	elif g > x and g <= 100:
-		n += 1
+	elif g > x and g <= end:
+	
 		print('guess smaller')
-	elif g < x and g >= 1:
-		n += 1
+	elif g < x and g >= start:
+	
 		print('guess bigger')
 	else:
-		print('you just can guess the number between 1 to 100')
+		print('you just can guess the number between %d to %d' % (start, end))
 	
 	print('forward you guess %d times!' % n )
